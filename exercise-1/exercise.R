@@ -26,8 +26,13 @@ worst.hwy <- wheel.20$id[wheel.20$hwy == min(wheel.20$hwy)]
 
 # Write a function that takes a `year` and a `make` as parameters, and returns 
 # The vehicle that gets the most hwy miles/gallon of vehicles of that make in that year
-
+MostHwy <- function(year, make) {
+  my.vehicle <- vehicles[vehicles$year == year & vehicles$make == make,]
+  return(my.vehicle[my.vehicle$hwy == max(my.vehicle$hwy),])
+}
 
 # What was the most efficient honda model of 1995?
-
-
+MostHwy('1995', 'Honda')
+## ??vehicles
+## dim(vehicles)
+## C(TRUE, FALSE) odd # of rows
